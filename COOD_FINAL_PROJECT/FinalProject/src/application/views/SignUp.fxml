@@ -49,7 +49,7 @@
             <PasswordField fx:id="password" layoutX="154.0" layoutY="153.0" prefHeight="15.0" prefWidth="210.0" promptText="Email" />
             <Button fx:id="button" layoutX="213.0" layoutY="297.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="35.0" prefWidth="93.0" style="-fx-background-color: #ffc900;" text="Sign Up">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="Arial Bold" size="13.0" />
                </font>
             </Button>
             <Label fx:id="wrongLogIn" layoutX="153.0" layoutY="127.0" textFill="RED" />
