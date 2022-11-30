@@ -19,9 +19,9 @@
                   <Image url="@../../../../Screen%20Shot%202022-11-30%20at%203.42.10 PM.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="234.0" fitWidth="262.0" layoutX="10.0" layoutY="93.0">
+            <ImageView fitHeight="234.0" fitWidth="262.0" layoutX="5.0" layoutY="54.0">
                <image>
-                  <Image url="@../../../../Screen%20Shot%202022-11-30%20at%203.42.10%20PM.png" />
+                  <Image url="@../../../../../../logo.jpeg" />
                </image>
             </ImageView>
          </children>
@@ -35,20 +35,26 @@
                   <Image url="@../img/lock.png" />
                </image>
             </ImageView>
-            <Label layoutX="50.0" layoutY="97.0" prefHeight="26.0" prefWidth="90.0" text="Username" textFill="#ffc900">
+            <Label layoutX="48.0" layoutY="48.0" prefHeight="26.0" prefWidth="90.0" text="Username" textFill="#ffc900">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="187.0" text="Password" textFill="#ffc900">
+            <Label layoutX="48.0" layoutY="138.0" text="Password" textFill="#ffc900">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="50.0" layoutY="132.0" prefHeight="33.0" prefWidth="240.0" promptText="Username" />
-            <PasswordField fx:id="password" layoutX="50.0" layoutY="213.0" prefHeight="33.0" prefWidth="240.0" promptText="Password" />
-            <Button fx:id="button" layoutX="124.0" layoutY="302.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="35.0" prefWidth="93.0" style="-fx-background-color: #ffc900;" text="Log In" />
+            <TextField fx:id="username" layoutX="48.0" layoutY="83.0" prefHeight="33.0" prefWidth="240.0" promptText="Username" />
+            <PasswordField fx:id="password" layoutX="48.0" layoutY="164.0" prefHeight="33.0" prefWidth="240.0" promptText="Password" />
+            <Button fx:id="button" layoutX="122.0" layoutY="253.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="35.0" prefWidth="93.0" style="-fx-background-color: #ffc900;" text="Sign In" />
             <Label fx:id="wrongLogIn" layoutX="153.0" layoutY="127.0" textFill="RED" />
+            <Label layoutX="61.0" layoutY="337.0" text="New User ?" textFill="#ffc900">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="button1" layoutX="184.0" layoutY="333.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="35.0" prefWidth="93.0" style="-fx-background-color: #ffc900;" text="Sign Up" />
          </children>
       </AnchorPane>
    </center>
