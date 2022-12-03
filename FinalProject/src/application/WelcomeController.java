@@ -80,8 +80,14 @@ public class WelcomeController implements Initializable{
     	Location toLocation = locationDAO.getLocation(to);
     	Location fromLocation = locationDAO.getLocation(from);
     	ZoneId defaultZoneId = ZoneId.systemDefault();
-    	ArrayList<ArrayList<TravelTickets>> routes=bs.findRoutes(toLocation, fromLocation, Date.from(departDate.atStartOfDay(defaultZoneId).toInstant()));
-    	SearchResultsController serResultsController = new SearchResultsController(routes);
+    	ArrayList<ArrayList<TravelTickets>> routes=bs.findRoutes(fromLocation, toLocation, Date.from(departDate.atStartOfDay(defaultZoneId).toInstant()));
+    	System.out.println("here");
+    	for(ArrayList<TravelTickets> route: routes) {
+    		for(TravelTickets ticketo:route) {
+    			System.out.println(ticketo.getTicketID());
+    		}
+    	}
+    	SearchResultsController serResultsController = new SearchResultsController(routes, this.customer);
     	main.changeScene("SearchResult.fxml", serResultsController);
     }
 

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import edu.northeastern.models.BusTicket;
+import edu.northeastern.models.Customer;
 import edu.northeastern.models.Itinerary;
 import edu.northeastern.models.TrainTickets;
 import edu.northeastern.models.TravelTickets;
@@ -56,10 +57,12 @@ public class ConfirmationPageController implements Initializable{
 	
 	Itinerary itinerary;
 	ArrayList<TravelTickets> routes;
+	Customer customer;
 	
-	public ConfirmationPageController(Itinerary itinerary, ArrayList<TravelTickets> routes) {
+	public ConfirmationPageController(Itinerary itinerary, ArrayList<TravelTickets> routes, Customer customer) {
 		this.routes=routes;
 		this.itinerary=itinerary;
+		this.customer=customer;
 	}
 	
 	
