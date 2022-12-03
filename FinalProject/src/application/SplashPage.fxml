@@ -28,7 +28,11 @@
                   <Image url="@../img/lock.png" />
                </image>
             </ImageView>
+
+            <Button fx:id="button" layoutX="216.0" layoutY="29.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: #ffc900;" text="Sign In / Sign Up">
+
             <Button fx:id="button" layoutX="214.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: #ffc900;" text="Sign In / Sign Up">
+
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font></Button>
@@ -38,6 +42,13 @@
                   <Image url="@../../../../../../logo.jpeg" />
                </image>
             </ImageView>
+
+            <Button fx:id="button1" layoutX="216.0" layoutY="98.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #ffc900;" text="Admin Sign In">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font>
+            </Button>
+
          </children>
       </AnchorPane>
    </center>

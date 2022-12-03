@@ -24,12 +24,9 @@ public class SplashController {
     	Main m= new Main();
     	LoginController loginController = new LoginController();
     	m.changeScene("Login.fxml",loginController);
-//    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
-//		fxmlLoader.setController(fxmlLoader);
-//		Parent root = fxmlLoader.load();
-//		Scene scene = new Scene(root,600,400);
-//		Stage window = (Stage) button.getScene().getWindow();
-//		window.setScene(new Scene(root, 750, 500));
+    	
+    	AdminLoginController adminLoginController = new AdminLoginController();
+    	m.changeScene("AdminLogin.fxml", adminLoginController);
 		
     }
 
