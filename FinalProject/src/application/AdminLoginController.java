@@ -28,8 +28,8 @@ public class AdminLoginController {
     @FXML
     private Label wrongLogIn;
     
-    private String uname;
-    private String pw;
+    private String adminUName;
+    private String adminPW;
     
  
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -38,12 +38,12 @@ public class AdminLoginController {
 
     @FXML
     void signIn(ActionEvent event) {
-    	this.uname = adminUsername.getText();
-		this.pw = adminPassword.getText();
+    	this.adminUName = adminUsername.getText();
+		this.adminPW = adminPassword.getText();
 		if(event.getSource()==button) {
 			ManagerService managerService = new ManagerService();
 			try {
-				Manager admin=managerService.login(this.uname, this.pw);
+				Manager admin=managerService.login(this.adminUName, this.adminPW);
 				Main m= new Main();
 				AdminController adminController = new AdminController();
 		    	m.changeScene("AdminView.fxml", adminController);
