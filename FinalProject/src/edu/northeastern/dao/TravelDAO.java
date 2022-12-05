@@ -132,13 +132,15 @@ public class TravelDAO {
 				ticketsList.add(flight);
 			}
 			else if(busNo!=null) {
-				BusTicket bus = (BusTicket)travel;
+				BusTicket bus = new BusTicket(cost,fromLocation,toLocation,departureTime, arrivalTime);
 				bus.setBusNo(busNo);
+				bus.setCarrier(airline);
 				ticketsList.add(bus);
 			}
 			else if(trainNo!=null) {
-				TrainTickets train = (TrainTickets)travel;
+				TrainTickets train = new TrainTickets(cost,fromLocation,toLocation,departureTime, arrivalTime);
 				train.setTrainNo(trainNo);
+				train.setCarrier(airline);
 				ticketsList.add(train);
 			}
 			

@@ -86,8 +86,6 @@ public class BookingService {
 		double totalCost = 0;
 		for(TravelTickets ticket: tickets)
 			totalCost+=ticket.getCost();
-		if(customer.getBankBalance()<totalCost)
-			return "not enough balance";
 		ItineraryDAO itineraryDAO = new ItineraryDAO();
 		itineraryDAO.insertNewItinerary(itinerary.getItineraryID(),itinerary.getOrigin().getLocationName(), itinerary.getDestination().getLocationName(), totalCost);
 		customer.setBankBalance(customer.getBankBalance()-totalCost);
@@ -113,12 +111,6 @@ public class BookingService {
 				flight.setFlightNo(ticket.getTicketID());
 			}
 			itineraryDAO.insertRoute(itinerary.getItineraryID(), ticket.getTicketID(), rank);
-			if(ticket.getTicketCount()==1)
-				itineraryDAO.deleteTicket(ticket);
-			else {
-				ticket.setTicketCount(ticket.getTicketCount()-1);
-				itineraryDAO.updateTicket(ticket);
-			}
 			rank+=1;
 		}
 		itineraryDAO.insertNewCustomerItinearyRel(customer, itinerary);

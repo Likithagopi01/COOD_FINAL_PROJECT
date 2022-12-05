@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -59,15 +60,23 @@ public class SearchResultsController implements Initializable{
 	   return sb.toString();
 	}
     @FXML
-    void gotoConfirm(ActionEvent event) {
+    void gotoConfirm(ActionEvent event) throws IOException {
     	Main main = new Main();
     	int selectedRow = tripsTable.getSelectionModel().getSelectedIndex();
     	LocationDAO locationDAO = new LocationDAO();
     	ArrayList<TravelTickets> selectedRoute = routes.get(selectedRow);
     	Itinerary itinerary = new Itinerary(randomString(10),selectedRoute.get(0).getFromLocation(), selectedRoute.get(selectedRoute.size()-1).getToLocation());
-    	ConfirmationPageController confirmationPageController = new ConfirmationPageController(itinerary, selectedRoute, this.customer);
+    	ConfirmationPageController confirmationPageController = new ConfirmationPageController(itinerary, selectedRoute, this.customer, this.routes);
+    	main.changeScene("Itinerary.fxml", confirmationPageController);
     	
     	
+    }
+    
+    @FXML
+    void goBack(ActionEvent event) throws IOException {
+    	Main m = new Main();
+    	WelcomeController welcomeController = new WelcomeController(customer, null);
+    	m.changeScene("WelcomePage.fxml", welcomeController);
     }
 
 
@@ -78,12 +87,10 @@ public class SearchResultsController implements Initializable{
 		this.customer = customer;
 	}
 	
-	private double calculateTotalCost() {
+	private double calculateTotalCost(ArrayList<TravelTickets> tickets) {
 		double cost=0;
-		for(ArrayList<TravelTickets> tickets: routes) {
-			for(TravelTickets ticket: tickets) {
-				cost+=ticket.getCost();
-			}
+		for(TravelTickets ticket: tickets) {
+			cost+=ticket.getCost();
 		}
 		return cost;
 	}
@@ -101,11 +108,10 @@ public class SearchResultsController implements Initializable{
 			Trips trip = new Trips();
 			trip.setDepartureDate(ticket.get(0).getDepartureTime().toString());
 			trip.setArrivalDate(ticket.get(ticket.size()-1).getArrivalTime().toString());
-			trip.setCost(calculateTotalCost());
+			trip.setCost(calculateTotalCost(ticket));
 			trip.setToLocation(ticket.get(ticket.size()-1).getToLocation().getLocationName());
 			trip.setFromLocation(ticket.get(0).getFromLocation().getLocationName());
 			tripList.add(trip);
-			System.out.println("Trip count");
 		}
 		tripsTable.getItems().addAll(tripList);
 	}

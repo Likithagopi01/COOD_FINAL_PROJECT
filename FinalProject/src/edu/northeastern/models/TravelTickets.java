@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class TravelTickets extends Travel{
 	private int ticketCount;
+	private String carrier;
 	private String ticketID;
 	
 	public TravelTickets(double cost, Location fromLocation, Location toLocation, Date departureTime,
@@ -21,6 +22,12 @@ public class TravelTickets extends Travel{
 	}
 	public void setTicketID(String ticketID) {
 		this.ticketID = ticketID;
+	}
+	public String getCarrier() {
+		return carrier;
+	}
+	public void setCarrier(String carrier) {
+		this.carrier = carrier;
 	}
 	
 }

@@ -24,7 +24,7 @@
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="595.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="button1" layoutX="346.0" layoutY="43.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="103.0" style="-fx-background-color: #ffc900;" text="Back" />
+            <Button fx:id="button1" layoutX="346.0" layoutY="43.0" mnemonicParsing="false" onAction="#goBack" prefHeight="43.0" prefWidth="103.0" style="-fx-background-color: #ffc900;" text="Back" />
             <TableView fx:id="tripsTable" layoutX="-132.0" layoutY="120.0" prefHeight="164.0" prefWidth="580.0">
               <columns>
                   <TableColumn fx:id="fromCol" prefWidth="120.0" text="From Location" />

@@ -44,9 +44,9 @@ public class AdminLoginController {
 			ManagerService managerService = new ManagerService();
 			try {
 				Manager admin=managerService.login(this.adminUName, this.adminPW);
-				Main m= new Main();
-				AdminController adminController = new AdminController();
-		    	m.changeScene("AdminView.fxml", adminController);
+		    	Main m= new Main();
+		    	AdminAddController adminAddController = new AdminAddController();
+		    	m.changeScene("AdminAdd.fxml",adminAddController);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

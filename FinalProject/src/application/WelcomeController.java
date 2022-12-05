@@ -32,6 +32,7 @@ import javafx.scene.text.Text;
 public class WelcomeController implements Initializable{
 	
 	Customer customer;
+	ArrayList<UpcomingTrips> upcomingTrips;
 
 	 @FXML
     private TableColumn<UpcomingTrips, String> arrCol;
@@ -68,6 +69,9 @@ public class WelcomeController implements Initializable{
 
     @FXML
     private TableView<UpcomingTrips> upcomingTripsTable;
+    
+    @FXML
+    private ComboBox<String> dropdown;
 
     @FXML
     void searchButton(ActionEvent event) throws IOException, SQLException {
@@ -81,25 +85,23 @@ public class WelcomeController implements Initializable{
     	Location fromLocation = locationDAO.getLocation(from);
     	ZoneId defaultZoneId = ZoneId.systemDefault();
     	ArrayList<ArrayList<TravelTickets>> routes=bs.findRoutes(fromLocation, toLocation, Date.from(departDate.atStartOfDay(defaultZoneId).toInstant()));
-    	System.out.println("here");
-    	for(ArrayList<TravelTickets> route: routes) {
-    		for(TravelTickets ticketo:route) {
-    			System.out.println(ticketo.getTicketID());
-    		}
-    	}
     	SearchResultsController serResultsController = new SearchResultsController(routes, this.customer);
     	main.changeScene("SearchResult.fxml", serResultsController);
     }
 
     
 
-    public WelcomeController(Customer customer) {
+    public WelcomeController(Customer customer, ArrayList<UpcomingTrips> trips) {
     	this.customer=customer;
+    	this.upcomingTrips=trips;
     }
     
     private void updateTexts() {
     	fName.setText(customer.getFirstName());
 		lName.setText(customer.getLastName());
+		dropdown.getItems().add("Edit my account");
+		dropdown.getItems().add("View Previous Trips");
+		dropdown.getItems().add("SignOut");
     }
     
     private void updateTable() {
@@ -109,11 +111,32 @@ public class WelcomeController implements Initializable{
     	fromCol.setCellValueFactory(new PropertyValueFactory<>("from"));
     	toCol.setCellValueFactory(new PropertyValueFactory<>("to"));
     	statCol.setCellValueFactory(new PropertyValueFactory<>("status"));
-    	upcomingTripsTable.getItems().add(null);
+    	if(upcomingTrips==null)
+    		return;
+    	for(UpcomingTrips uc:upcomingTrips) {
+    		upcomingTripsTable.getItems().add(uc);
+    		System.out.println("herejhdsf");
+    		System.out.println(uc.getArrive());
+    	}
+    }
+    
+    @FXML
+    void changeScreen(ActionEvent event) throws IOException {
+    	Main m = new Main();
+    	if(dropdown.getValue().equals("SignOut")) {
+    		
+    		SplashController splashController = new SplashController();
+    		m.changeScene("SplashPage.fxml", splashController);
+    	}
+    	else if(dropdown.getValue().equals("View Previous Trips")) {
+    		TravelHistoryController travelHistoryController = new TravelHistoryController();
+    		m.changeScene("TravelHistory.fxml", travelHistoryController);
+    	}
     }
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
 		
 		LocationDAO locationDAO = new LocationDAO();
 		try {

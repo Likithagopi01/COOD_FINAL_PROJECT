@@ -21,14 +21,12 @@ public class ManagerService {
 		}
 	}
 	
-	public String createTicket(Manager manager, String source, String destination, int ticketCount, String flightNo, String airline, double cost, Date departTime, Date arriveTime, String ticketId ) throws SQLException {
+	public String createTicket(String source, String destination, int ticketCount, String flightNo, String airline, double cost, Date departTime, Date arriveTime, String ticketId ) throws SQLException {
 		ManagerDAO managerDAO = new ManagerDAO();
 		LocationDAO locationDAO = new LocationDAO();
-		if (manager.getType().equals("Flight")) {
-			Location sourceLocation = locationDAO.getLocation(source);
-			Location destLocation = locationDAO.getLocation(destination);
-			managerDAO.addTicket(sourceLocation, destLocation, ticketId, ticketCount, flightNo, airline, null, null, cost, departTime, arriveTime);
-		}
+		Location sourceLocation = locationDAO.getLocation(source);
+		Location destLocation = locationDAO.getLocation(destination);
+		managerDAO.addTicket(sourceLocation, destLocation, ticketId, ticketCount, flightNo, airline, null, null, cost, departTime, arriveTime);
 		return "success";
 	}
 	

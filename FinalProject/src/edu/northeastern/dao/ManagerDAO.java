@@ -41,10 +41,10 @@ public class ManagerDAO {
 			insertQuery = "Insert into Tickets values ("+ticketCount+",'"+ticketId+"','"+flightNo+"','"+airline+"',null,null,"+cost+",'"+source.getLocationName()+"','"+destination.getLocationName()+"','"+ts1+"','"+ts2+"')";
 		}
 		else if(busNo!=null) {
-			insertQuery = "Insert into Tickets values ("+ticketCount+",'"+ticketId+"',null,null,'"+busNo+"',null,"+cost+",'"+source.getLocationName()+"','"+destination.getLocationName()+"','"+departTime.toString()+"','"+arriveTime.toString()+"')";
+			insertQuery = "Insert into Tickets values ("+ticketCount+",'"+ticketId+"',null,'"+airline+"','"+busNo+"',null,"+cost+",'"+source.getLocationName()+"','"+destination.getLocationName()+"','"+ts1+"','"+ts2+"')";
 		}
 		else {
-			insertQuery = "Insert into Tickets values ("+ticketCount+",'"+ticketId+"',null,null,null,'"+trainNo+"','"+source.getLocationName()+"','"+destination.getLocationName()+"'";
+			insertQuery = "Insert into Tickets values ("+ticketCount+",'"+ticketId+"',null,'"+airline+"',null,'"+trainNo+"','"+cost+"','"+source.getLocationName()+"','"+destination.getLocationName()+"','"+ts1+"','"+ts2+"')";
 		}
 		DBConnectionUtil dbConnectionUtil =  new DBConnectionUtil();
 		System.out.println(insertQuery);

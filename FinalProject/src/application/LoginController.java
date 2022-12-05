@@ -1,6 +1,7 @@
 package application;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -32,6 +33,12 @@ public class LoginController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 	}
+	@FXML
+    void goToSignIn(ActionEvent event) throws IOException {
+		Main m = new Main();
+		SignUpController signUpController = new SignUpController();
+		m.changeScene("SignUp.fxml", signUpController);
+    }
 	
 	@FXML
     void signIn(ActionEvent event) {
@@ -44,7 +51,7 @@ public class LoginController implements Initializable{
 			try {
 				Customer customer=customerService.login(this.uname, this.pw);
 				Main m= new Main();
-				WelcomeController welcomeController = new WelcomeController(customer);
+				WelcomeController welcomeController = new WelcomeController(customer,null);
 		    	m.changeScene("WelcomePage.fxml",welcomeController);
 			} catch (Exception e) {
 				e.printStackTrace();

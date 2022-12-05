@@ -11,6 +11,7 @@ public class DBConnectionUtil {
 	public void queryOperations(String query) throws SQLException{
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/final_project","root","rootuser");
 		Statement stmt = conn.createStatement();
+		System.out.println(query);
 		stmt.execute(query);
 		conn.close();
 	}

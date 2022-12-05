@@ -4,12 +4,8 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
 
 public class SplashController {
 
@@ -24,10 +20,15 @@ public class SplashController {
     	Main m= new Main();
     	LoginController loginController = new LoginController();
     	m.changeScene("Login.fxml",loginController);
-    	
-    	AdminLoginController adminLoginController = new AdminLoginController();
-    	m.changeScene("AdminLogin.fxml", adminLoginController);
 		
     }
+    
+    @FXML
+    void goToAdminLogin(ActionEvent event) throws IOException {
+    	Main m= new Main();
+    	AdminLoginController adminLoginController = new AdminLoginController();
+    	m.changeScene("AdminLogin.fxml", adminLoginController);
+    }
+
 
 }

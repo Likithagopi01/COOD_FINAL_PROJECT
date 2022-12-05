@@ -6,6 +6,15 @@ public class Trips {
 	private String departureDate;
 	private String arrivalDate;
 	private double cost;
+	private int availableTickets;
+	private String carrier;
+	private String mode;
+	public String getMode() {
+		return mode;
+	}
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
 	public String getFromLocation() {
 		return fromLocation;
 	}
@@ -35,6 +44,18 @@ public class Trips {
 	}
 	public void setCost(double cost) {
 		this.cost = cost;
+	}
+	public int getAvailableTickets() {
+		return availableTickets;
+	}
+	public void setAvailableTickets(int availableTickets) {
+		this.availableTickets = availableTickets;
+	}
+	public String getCarrier() {
+		return carrier;
+	}
+	public void setCarrier(String carrier) {
+		this.carrier = carrier;
 	}
 	
 }
