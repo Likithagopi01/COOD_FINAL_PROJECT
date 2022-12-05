@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginController implements Initializable{
+public class LoginController extends Controllers implements Initializable{
 
 	@FXML
     private Button button;
@@ -58,6 +58,10 @@ public class LoginController implements Initializable{
 			}
 		}
     }
+	@Override
+	public void changeScreen() {
+		
+	}
 
 	
 }

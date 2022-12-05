@@ -30,7 +30,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-public class AdminAddController implements Initializable{
+public class AdminAddController extends Controllers implements Initializable{
 
 	@FXML
     private TextField carrier;
@@ -125,9 +125,7 @@ public class AdminAddController implements Initializable{
     }
     @FXML
     void signOut(ActionEvent event) throws IOException {
-    	Main m = new Main();
-    	SplashController splashController = new SplashController();
-    	m.changeScene("SplashPage.fxml", splashController);
+    	changeScreen();
     }
 
     @FXML
@@ -199,6 +197,16 @@ public class AdminAddController implements Initializable{
 			e.printStackTrace();
 		}
 		
+	}
+	@Override
+	public void changeScreen() {
+		Main m = new Main();
+    	SplashController splashController = new SplashController();
+    	try {
+			m.changeScene("SplashPage.fxml", splashController);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

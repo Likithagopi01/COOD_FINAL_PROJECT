@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-public class AdminDelUpController {
+public class AdminDelUpController extends Controllers{
 
     @FXML
     private TableColumn<ItineraryTable, String> col_arrive;
@@ -79,5 +79,10 @@ public class AdminDelUpController {
     void update_trip(ActionEvent event) {
 
     }
+
+	@Override
+	public void changeScreen() {
+		
+	}
 
 }

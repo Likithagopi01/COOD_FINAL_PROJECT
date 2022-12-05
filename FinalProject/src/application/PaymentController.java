@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
-public class PaymentController implements Initializable{
+public class PaymentController extends Controllers implements Initializable{
 	
 	Customer customer;
 	
@@ -115,6 +115,12 @@ public class PaymentController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		updateTexts();
+		
+	}
+
+
+	@Override
+	public void changeScreen() {
 		
 	}
 }

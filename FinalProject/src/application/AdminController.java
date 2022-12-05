@@ -14,7 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class AdminController {
+public class AdminController extends Controllers{
 	
 	Manager manager;
 
@@ -64,6 +64,11 @@ public class AdminController {
 		
 	
 		adminUpdateTexts();
+		
+	}
+
+	@Override
+	public void changeScreen() {
 		
 	}
 

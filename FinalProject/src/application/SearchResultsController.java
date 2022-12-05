@@ -19,7 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class SearchResultsController implements Initializable{
+public class SearchResultsController extends Controllers implements Initializable{
 	
 	
 	 @FXML
@@ -114,6 +114,11 @@ public class SearchResultsController implements Initializable{
 			tripList.add(trip);
 		}
 		tripsTable.getItems().addAll(tripList);
+	}
+	
+	@Override
+	public void changeScreen() {
+		
 	}
 	
 	

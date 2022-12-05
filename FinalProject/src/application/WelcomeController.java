@@ -29,7 +29,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
-public class WelcomeController implements Initializable{
+public class WelcomeController extends Controllers implements Initializable{
 	
 	Customer customer;
 	ArrayList<UpcomingTrips> upcomingTrips;
@@ -150,6 +150,13 @@ public class WelcomeController implements Initializable{
 		}
 		updateTexts();
 		updateTable();
+	}
+
+
+
+	@Override
+	public void changeScreen() {
+		
 	}
 
 }

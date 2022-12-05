@@ -20,7 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class SignUpController {
+public class SignUpController extends Controllers{
 
     @FXML
     private Button button;
@@ -81,6 +81,11 @@ public class SignUpController {
     		alert.showAndWait();
     	}
     }
+
+	@Override
+	public void changeScreen() {
+		
+	}
 
 }
 

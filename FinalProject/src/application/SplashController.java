@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class SplashController {
+public class SplashController extends Controllers{
 
     @FXML
     private Button button;
@@ -29,6 +29,11 @@ public class SplashController {
     	AdminLoginController adminLoginController = new AdminLoginController();
     	m.changeScene("AdminLogin.fxml", adminLoginController);
     }
+
+	@Override
+	public void changeScreen() {
+		
+	}
 
 
 }

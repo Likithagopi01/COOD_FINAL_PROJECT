@@ -12,7 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-public class TravelHistoryController implements Initializable{
+public class TravelHistoryController extends Controllers implements Initializable{
 
     @FXML
     private TableColumn<PreviousTrips, String> col_arrive;
@@ -58,6 +58,11 @@ public class TravelHistoryController implements Initializable{
 		PreviousTrips previousTrips2 = new PreviousTrips("T1", "Boston", "San Francisco", "20-11-2022", "22-11-2022", "Completed",400);
 		table_users.getItems().add(previousTrips1);
 		table_users.getItems().add(previousTrips2);
+		
+	}
+
+	@Override
+	public void changeScreen() {
 		
 	}
 

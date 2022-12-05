@@ -21,7 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
-public class ConfirmationPageController implements Initializable{
+public class ConfirmationPageController extends Controllers implements Initializable{
     @FXML
     private TableColumn<ItineraryTable, String> arrivCol;
 
@@ -120,6 +120,12 @@ public class ConfirmationPageController implements Initializable{
 				itinerary.setType("Flight");
 			itineraryTable.getItems().add(itinerary);
 		}
+		
+	}
+
+
+	@Override
+	public void changeScreen() {
 		
 	}
 
