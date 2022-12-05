@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="-20.0" prefHeight="750.0" prefWidth="900.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-20.0">
+         <children>
+            <TextField fx:id="txt_mode" layoutX="278.0" layoutY="241.0" onKeyReleased="#search_mode" prefHeight="30.0" prefWidth="180.0" promptText="Name on card" />
+            <TextField fx:id="txt_to" layoutX="278.0" layoutY="282.0" prefHeight="30.0" prefWidth="180.0" promptText="CVV" />
+            <TextField fx:id="txt_from" layoutX="278.0" layoutY="322.0" prefHeight="30.0" prefWidth="180.0" promptText="Expiry" />
+            <TextField fx:id="txt_depart" layoutX="278.0" layoutY="360.0" prefHeight="30.0" prefWidth="180.0" promptText="Billing Address" />
+            <TextField fx:id="txtId" layoutX="278.0" layoutY="206.0" prefHeight="23.0" prefWidth="180.0" promptText="Card Number" />
+            <Button fx:id="payButton" layoutX="278.0" layoutY="423.0" mnemonicParsing="false" onAction="#pay" prefHeight="37.0" prefWidth="180.0" style="-fx-background-color: ffc900;" text="Pay Here!">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../WhatsApp%20Image%202022-11-30%20at%204.29.51%20PM.jpeg" />
+               </image>
+            </ImageView>
+            <Text fill="#fcfcfc" layoutX="183.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm your travel from">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="fromText" fill="#fcfcfc" layoutX="444.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="from">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" layoutX="515.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="toText" fill="#fcfcfc" layoutX="572.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fill="#fcfcfc" layoutX="259.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your total is:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="totalText" fill="#fcfcfc" layoutX="414.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="total">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
