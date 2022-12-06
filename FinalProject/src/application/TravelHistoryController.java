@@ -1,9 +1,13 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import edu.northeastern.models.Customer;
 import edu.northeastern.tableModels.PreviousTrips;
+import edu.northeastern.tableModels.UpcomingTrips;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +17,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 public class TravelHistoryController implements Initializable{
+	
+	Customer customer;
+	ArrayList<UpcomingTrips> trips;
 
     @FXML
     private TableColumn<PreviousTrips, String> col_arrive;
@@ -37,8 +44,10 @@ public class TravelHistoryController implements Initializable{
 
 
     @FXML
-    void Add_trips(ActionEvent event) {
-
+    void Add_trips(ActionEvent event) throws IOException {
+    	Main m = new Main();
+    	WelcomeController welcomeController = new WelcomeController(customer, trips);
+    	m.changeScene("WelcomePage.fxml", welcomeController);
     }
 
     @FXML
@@ -59,6 +68,11 @@ public class TravelHistoryController implements Initializable{
 		table_users.getItems().add(previousTrips1);
 		table_users.getItems().add(previousTrips2);
 		
+	}
+	
+	public TravelHistoryController(Customer customer,  ArrayList<UpcomingTrips> trips) {
+		this.customer = customer;
+		this.trips = trips;
 	}
 
 }

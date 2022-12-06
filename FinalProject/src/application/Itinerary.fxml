@@ -7,16 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView fx:id="itineraryTable" layoutX="7.0" layoutY="76.0" prefHeight="358.0" prefWidth="697.0">
+      <TableView fx:id="itineraryTable" layoutX="7.0" layoutY="76.0" prefHeight="358.0" prefWidth="751.0">
         <columns>
           <TableColumn fx:id="typeCol" prefWidth="83.0" text="Mode" />
-          <TableColumn fx:id="fromCol" prefWidth="107.0" text="From" />
-            <TableColumn fx:id="toCol" prefWidth="97.5" text="To" />
-            <TableColumn fx:id="departCol" prefWidth="141.5" text="Departure DateTime" />
-            <TableColumn fx:id="arrivCol" prefWidth="147.0" text="Arrival DateTime" />
-            <TableColumn fx:id="costCol" prefWidth="120.0" text="Cost" />
+          <TableColumn fx:id="fromCol" prefWidth="82.0" text="From" />
+            <TableColumn fx:id="toCol" prefWidth="95.5" text="To" />
+            <TableColumn fx:id="departCol" prefWidth="125.5" text="Departure DateTime" />
+            <TableColumn fx:id="arrivCol" prefWidth="110.0" text="Arrival DateTime" />
+            <TableColumn fx:id="costCol" text="Cost" />
+            <TableColumn fx:id="carrierCol" prefWidth="84.0" text="Carrier" />
+            <TableColumn fx:id="routeCol" prefWidth="90.0" text="Route Number" />
         </columns>
       </TableView>
       <Button layoutX="263.0" layoutY="461.0" mnemonicParsing="false" onAction="#goToPayment" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #ffc900;" text="--&gt; Continue to Checkout" />

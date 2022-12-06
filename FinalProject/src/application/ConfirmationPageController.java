@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 
 import edu.northeastern.models.BusTicket;
 import edu.northeastern.models.Customer;
+import edu.northeastern.models.FlightTickets;
 import edu.northeastern.models.Itinerary;
 import edu.northeastern.models.TrainTickets;
 import edu.northeastern.models.TravelTickets;
@@ -39,15 +40,13 @@ public class ConfirmationPageController implements Initializable{
 
     @FXML
     private TableColumn<ItineraryTable, String> toCol;
+    
+    @FXML
+    private TableColumn<ItineraryTable, String> carrierCol;
+    
+    @FXML
+    private TableColumn<ItineraryTable, String> routeCol;
 
-//    @FXML
-//    private Text toDate;
-//
-//    @FXML
-//    private Text toText;
-//
-//    @FXML
-//    private Text totalCost;
 
     @FXML
     private TableColumn<ItineraryTable, String> typeCol;
@@ -61,11 +60,6 @@ public class ConfirmationPageController implements Initializable{
 
 	private ArrayList<ArrayList<TravelTickets>> allTickets;
 	
-//	public ConfirmationPageController(Itinerary itinerary, ArrayList<TravelTickets> routes, Customer customer, ArrayList<ArrayList<TravelTickets>> allTickets) {
-//		
-//	}
-//	
-
 	public ConfirmationPageController(Itinerary itinerary, ArrayList<TravelTickets> routes, Customer customer,
 			ArrayList<ArrayList<TravelTickets>> allTickets) {
 		this.routes=routes;
@@ -92,10 +86,6 @@ public class ConfirmationPageController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-//		fromText.setText(itinerary.getOrigin().getLocationName());
-//		toText.setText(itinerary.getDestination().getLocationName());
-//		fromDate.setText(this.routes.get(0).getDepartureTime().toString());
-//		toDate.setText(this.routes.get(this.routes.size()-1).getArrivalTime().toString());
 		
 		arrivCol.setCellValueFactory(new PropertyValueFactory<>("arrival"));
 		costCol.setCellValueFactory(new PropertyValueFactory<>("cost"));
@@ -104,6 +94,8 @@ public class ConfirmationPageController implements Initializable{
 		fromCol.setCellValueFactory(new PropertyValueFactory<>("from"));
 		toCol.setCellValueFactory(new PropertyValueFactory<>("to"));
 		typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
+		routeCol.setCellValueFactory(new PropertyValueFactory<>("travelId"));
+		carrierCol.setCellValueFactory(new PropertyValueFactory<>("carrier"));
 			
 		for(TravelTickets ticket:this.routes) {
 			ItineraryTable itinerary = new ItineraryTable();
@@ -112,12 +104,26 @@ public class ConfirmationPageController implements Initializable{
 			itinerary.setDeparture(ticket.getDepartureTime().toString());
 			itinerary.setArrival(ticket.getArrivalTime().toString());
 			itinerary.setCost(ticket.getCost());
-			if(ticket instanceof BusTicket)
+			
+			itinerary.setTravelId(ticket.getTicketID());
+			if(ticket instanceof BusTicket) {
 				itinerary.setType("Bus");
-			else if(ticket instanceof TrainTickets)
+				itinerary.setCarrier(ticket.getCarrier());
+				BusTicket newTicket = (BusTicket) ticket;
+				itinerary.setTravelId(newTicket.getBusNo());
+			}
+			else if(ticket instanceof TrainTickets) {
 				itinerary.setType("Train");
-			else
+				itinerary.setCarrier(ticket.getCarrier());
+				TrainTickets newTicket = (TrainTickets) ticket;
+				itinerary.setTravelId(newTicket.getTrainNo());
+			}
+			else {
 				itinerary.setType("Flight");
+				FlightTickets newTicket = (FlightTickets) ticket;
+				itinerary.setCarrier(newTicket.getCarrier());
+				itinerary.setTravelId(newTicket.getFlightNo());
+			}
 			itineraryTable.getItems().add(itinerary);
 		}
 		

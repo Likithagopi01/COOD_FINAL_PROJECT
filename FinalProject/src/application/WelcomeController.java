@@ -129,7 +129,7 @@ public class WelcomeController implements Initializable{
     		m.changeScene("SplashPage.fxml", splashController);
     	}
     	else if(dropdown.getValue().equals("View Previous Trips")) {
-    		TravelHistoryController travelHistoryController = new TravelHistoryController();
+    		TravelHistoryController travelHistoryController = new TravelHistoryController(customer, upcomingTrips);
     		m.changeScene("TravelHistory.fxml", travelHistoryController);
     	}
     }

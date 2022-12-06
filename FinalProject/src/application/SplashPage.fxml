@@ -25,19 +25,19 @@
          <children>
 
 
-            <Button fx:id="button" layoutX="155.0" layoutY="197.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: #ffc900;" text="Sign In / Sign Up">
+            <Button fx:id="button" layoutX="67.0" layoutY="200.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: #ffc900;" text="Sign In / Sign Up">
 
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font></Button>
             <Label fx:id="wrongLogIn" layoutX="153.0" layoutY="127.0" textFill="RED" />
 
-            <Button fx:id="button1" layoutX="153.0" layoutY="260.0" mnemonicParsing="false" onAction="#goToAdminLogin" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #ffc900;" text="Admin Sign In">
+            <Button fx:id="button1" layoutX="67.0" layoutY="261.0" mnemonicParsing="false" onAction="#goToAdminLogin" prefHeight="38.0" prefWidth="143.0" style="-fx-background-color: #ffc900;" text="Admin Sign In">
                <font>
                   <Font name="Arial Bold" size="13.0" />
                </font>
             </Button>
-            <Label layoutX="170.0" layoutY="58.0" text="Hello!" textFill="#ffc900">
+            <Label layoutX="-39.0" layoutY="117.0" text="Welcome to A-CAP" textFill="#ffc900">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>

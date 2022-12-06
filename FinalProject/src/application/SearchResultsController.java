@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 
 public class SearchResultsController implements Initializable{
 	
@@ -45,6 +46,13 @@ public class SearchResultsController implements Initializable{
 
     @FXML
     private TableView<Trips> tripsTable;
+    
+    @FXML
+    private Text fName;
+
+    @FXML
+    private Text lName;
+
     
 	private ArrayList<ArrayList<TravelTickets>> routes;
 	
@@ -79,7 +87,10 @@ public class SearchResultsController implements Initializable{
     	m.changeScene("WelcomePage.fxml", welcomeController);
     }
 
-
+    private void updateTexts() {
+    	fName.setText(customer.getFirstName());
+		lName.setText(customer.getLastName());
+    }
 
 
 	public SearchResultsController(ArrayList<ArrayList<TravelTickets>> routes, Customer customer) {
@@ -114,6 +125,7 @@ public class SearchResultsController implements Initializable{
 			tripList.add(trip);
 		}
 		tripsTable.getItems().addAll(tripList);
+		updateTexts();
 	}
 	
 	

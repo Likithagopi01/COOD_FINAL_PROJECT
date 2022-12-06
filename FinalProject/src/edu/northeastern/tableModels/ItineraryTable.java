@@ -7,6 +7,8 @@ public class ItineraryTable {
 	private String arrival;
 	private double cost;
 	private String type;
+	private String carrier;
+	private String travelId;
 	public String getFrom() {
 		return from;
 	}
@@ -42,6 +44,18 @@ public class ItineraryTable {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public String getCarrier() {
+		return carrier;
+	}
+	public void setCarrier(String carrier) {
+		this.carrier = carrier;
+	}
+	public String getTravelId() {
+		return travelId;
+	}
+	public void setTravelId(String travelId) {
+		this.travelId = travelId;
 	}
 	
 	

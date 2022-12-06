@@ -42,11 +42,11 @@
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font></Text>
-            <Text fill="#ffc900" layoutX="106.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FirstName" wrappingWidth="81.16143035888672">
+            <Text fx:id="fName" fill="#ffc900" layoutX="106.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FirstName" wrappingWidth="81.16143035888672">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Text>
-            <Text fill="#ffc900" layoutX="196.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName" wrappingWidth="78.49474334716797">
+            <Text fx:id="lName" fill="#ffc900" layoutX="196.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName" wrappingWidth="78.49474334716797">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font></Text>

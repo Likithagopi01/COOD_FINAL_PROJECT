@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,6 +29,9 @@ public class AdminLoginController {
     @FXML
     private Label wrongLogIn;
     
+    @FXML
+    private Button goBackButton;
+    
     private String adminUName;
     private String adminPW;
     
@@ -35,6 +39,13 @@ public class AdminLoginController {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 	}
+	
+    @FXML
+    void goBack(ActionEvent event) throws IOException {
+    	Main m = new Main();
+    	SplashController splashController = new SplashController();
+    	m.changeScene("SplashPage.fxml", splashController);
+    }
 
     @FXML
     void signIn(ActionEvent event) {
